@@ -1,13 +1,16 @@
+//链接数据库里的数据
+
 const mysql = require('mysql')
 const connects = mysql.createConnection({
     user: 'root',
-    password: 'root',
+    host: 'localhost',
     port: '3306',
-    database: 'blist'
+    password: 'root',
+    database: 'userlist'
 })
-connects.connect(err => {
+connects.connect((err) => {
     if (err) {
-        console.log('连接失败')
+        console.log('链接失败')
     } else {
         console.log('连接成功')
     }
